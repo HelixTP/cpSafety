@@ -1,4 +1,0 @@
-/opt/JetBrains/apps/CLion/ch-0/183.5153.40/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lad/workspaces/cpSafety
--- Configuring done
--- Generating done
--- Build files have been written to: /home/lad/workspaces/cpSafety/cmake-build-debug

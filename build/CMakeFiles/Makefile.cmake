@@ -48,4 +48,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cpSafety.dir/DependInfo.cmake"
+  "CMakeFiles/xxHash.dir/DependInfo.cmake"
   )

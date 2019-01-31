@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/lad/workspaces/cpSafety/build",
+  "command": "/usr/bin/clang  -I/Users/lad/workspaces/cpSafety/.  -g   -std=gnu11 -o CMakeFiles/cpSafety.dir/src/main.c.o   -c /Users/lad/workspaces/cpSafety/src/main.c",
+  "file": "/Users/lad/workspaces/cpSafety/src/main.c"
+},
+{
+  "directory": "/Users/lad/workspaces/cpSafety/build",
+  "command": "/usr/bin/clang  -I/Users/lad/workspaces/cpSafety/.  -g   -std=gnu11 -o CMakeFiles/xxHash.dir/src/xxHash.c.o   -c /Users/lad/workspaces/cpSafety/src/xxHash.c",
+  "file": "/Users/lad/workspaces/cpSafety/src/xxHash.c"
+},
+{
+  "directory": "/Users/lad/workspaces/cpSafety/build",
+  "command": "/usr/bin/clang  -I/Users/lad/workspaces/cpSafety/.  -g   -std=gnu11 -o CMakeFiles/xxHash.dir/src/xxhsum.c.o   -c /Users/lad/workspaces/cpSafety/src/xxhsum.c",
+  "file": "/Users/lad/workspaces/cpSafety/src/xxhsum.c"
+}
+]

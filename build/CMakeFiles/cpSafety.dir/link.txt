@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/cc  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cpSafety.dir/src/main.c.o  -o cpSafety 
+/usr/bin/clang -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cpSafety.dir/src/main.c.o  -o cpSafety libxxHash.a 

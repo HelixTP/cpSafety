@@ -60,15 +60,15 @@ include CMakeFiles/cpSafety.dir/flags.make
 CMakeFiles/cpSafety.dir/src/main.c.o: CMakeFiles/cpSafety.dir/flags.make
 CMakeFiles/cpSafety.dir/src/main.c.o: ../src/main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cpSafety.dir/src/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/main.c.o   -c /Users/lad/workspaces/cpSafety/src/main.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/main.c.o   -c /Users/lad/workspaces/cpSafety/src/main.c
 
 CMakeFiles/cpSafety.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpSafety.dir/src/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lad/workspaces/cpSafety/src/main.c > CMakeFiles/cpSafety.dir/src/main.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lad/workspaces/cpSafety/src/main.c > CMakeFiles/cpSafety.dir/src/main.c.i
 
 CMakeFiles/cpSafety.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpSafety.dir/src/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/main.c -o CMakeFiles/cpSafety.dir/src/main.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/main.c -o CMakeFiles/cpSafety.dir/src/main.c.s
 
 # Object files for target cpSafety
 cpSafety_OBJECTS = \
@@ -79,6 +79,7 @@ cpSafety_EXTERNAL_OBJECTS =
 
 cpSafety: CMakeFiles/cpSafety.dir/src/main.c.o
 cpSafety: CMakeFiles/cpSafety.dir/build.make
+cpSafety: libxxHash.a
 cpSafety: CMakeFiles/cpSafety.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cpSafety"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpSafety.dir/link.txt --verbose=$(VERBOSE)

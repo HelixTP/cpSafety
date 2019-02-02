@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <strings.h>
 
 #include "xxhash.h"
 #include "xxhsum.h"
@@ -23,7 +24,9 @@ int compute( char* filename){
 int main(int argc, const char** argv) {
 
 	clock_t start, stop;
-	char* filename = argv[1];
+    char filename[255];
+    strcpy(filename, argv[1]);
+
 
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
 	system("pwd");
@@ -37,7 +40,7 @@ int main(int argc, const char** argv) {
 	return EXIT_SUCCESS;
 }
 
-List *initialisation()
+/*List *initialisation()
 {
     List *list = malloc(sizeof(*list));
     HashFile *hashFile = malloc(sizeof(*hashFile));
@@ -52,4 +55,4 @@ List *initialisation()
     list->first = hashFile;
 
     return list;
-}
+}*/

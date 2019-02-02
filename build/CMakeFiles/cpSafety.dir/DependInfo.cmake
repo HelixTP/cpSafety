@@ -4,18 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/lad/workspaces/cpSafety/src/copyH.c" "/Users/lad/workspaces/cpSafety/build/CMakeFiles/cpSafety.dir/src/copyH.c.o"
   "/Users/lad/workspaces/cpSafety/src/main.c" "/Users/lad/workspaces/cpSafety/build/CMakeFiles/cpSafety.dir/src/main.c.o"
+  "/Users/lad/workspaces/cpSafety/src/xxhash.c" "/Users/lad/workspaces/cpSafety/build/CMakeFiles/cpSafety.dir/src/xxhash.c.o"
+  "/Users/lad/workspaces/cpSafety/src/xxhsum.c" "/Users/lad/workspaces/cpSafety/build/CMakeFiles/cpSafety.dir/src/xxhsum.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
+  "../src"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/lad/workspaces/cpSafety/build/CMakeFiles/xxHash.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

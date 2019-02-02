@@ -1,1 +1,1 @@
-/usr/bin/clang -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cpSafety.dir/src/main.c.o  -o cpSafety libxxHash.a 
+/usr/bin/clang -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cpSafety.dir/src/copyH.c.o CMakeFiles/cpSafety.dir/src/main.c.o CMakeFiles/cpSafety.dir/src/xxhash.c.o CMakeFiles/cpSafety.dir/src/xxhsum.c.o  -o cpSafety 

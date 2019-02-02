@@ -57,9 +57,22 @@ include CMakeFiles/cpSafety.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cpSafety.dir/flags.make
 
+CMakeFiles/cpSafety.dir/src/copyH.c.o: CMakeFiles/cpSafety.dir/flags.make
+CMakeFiles/cpSafety.dir/src/copyH.c.o: ../src/copyH.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cpSafety.dir/src/copyH.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/copyH.c.o   -c /Users/lad/workspaces/cpSafety/src/copyH.c
+
+CMakeFiles/cpSafety.dir/src/copyH.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpSafety.dir/src/copyH.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lad/workspaces/cpSafety/src/copyH.c > CMakeFiles/cpSafety.dir/src/copyH.c.i
+
+CMakeFiles/cpSafety.dir/src/copyH.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpSafety.dir/src/copyH.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/copyH.c -o CMakeFiles/cpSafety.dir/src/copyH.c.s
+
 CMakeFiles/cpSafety.dir/src/main.c.o: CMakeFiles/cpSafety.dir/flags.make
 CMakeFiles/cpSafety.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cpSafety.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/cpSafety.dir/src/main.c.o"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/main.c.o   -c /Users/lad/workspaces/cpSafety/src/main.c
 
 CMakeFiles/cpSafety.dir/src/main.c.i: cmake_force
@@ -70,18 +83,49 @@ CMakeFiles/cpSafety.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpSafety.dir/src/main.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/main.c -o CMakeFiles/cpSafety.dir/src/main.c.s
 
+CMakeFiles/cpSafety.dir/src/xxhash.c.o: CMakeFiles/cpSafety.dir/flags.make
+CMakeFiles/cpSafety.dir/src/xxhash.c.o: ../src/xxhash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/cpSafety.dir/src/xxhash.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/xxhash.c.o   -c /Users/lad/workspaces/cpSafety/src/xxhash.c
+
+CMakeFiles/cpSafety.dir/src/xxhash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpSafety.dir/src/xxhash.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lad/workspaces/cpSafety/src/xxhash.c > CMakeFiles/cpSafety.dir/src/xxhash.c.i
+
+CMakeFiles/cpSafety.dir/src/xxhash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpSafety.dir/src/xxhash.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/xxhash.c -o CMakeFiles/cpSafety.dir/src/xxhash.c.s
+
+CMakeFiles/cpSafety.dir/src/xxhsum.c.o: CMakeFiles/cpSafety.dir/flags.make
+CMakeFiles/cpSafety.dir/src/xxhsum.c.o: ../src/xxhsum.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/cpSafety.dir/src/xxhsum.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cpSafety.dir/src/xxhsum.c.o   -c /Users/lad/workspaces/cpSafety/src/xxhsum.c
+
+CMakeFiles/cpSafety.dir/src/xxhsum.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpSafety.dir/src/xxhsum.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lad/workspaces/cpSafety/src/xxhsum.c > CMakeFiles/cpSafety.dir/src/xxhsum.c.i
+
+CMakeFiles/cpSafety.dir/src/xxhsum.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpSafety.dir/src/xxhsum.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lad/workspaces/cpSafety/src/xxhsum.c -o CMakeFiles/cpSafety.dir/src/xxhsum.c.s
+
 # Object files for target cpSafety
 cpSafety_OBJECTS = \
-"CMakeFiles/cpSafety.dir/src/main.c.o"
+"CMakeFiles/cpSafety.dir/src/copyH.c.o" \
+"CMakeFiles/cpSafety.dir/src/main.c.o" \
+"CMakeFiles/cpSafety.dir/src/xxhash.c.o" \
+"CMakeFiles/cpSafety.dir/src/xxhsum.c.o"
 
 # External object files for target cpSafety
 cpSafety_EXTERNAL_OBJECTS =
 
+cpSafety: CMakeFiles/cpSafety.dir/src/copyH.c.o
 cpSafety: CMakeFiles/cpSafety.dir/src/main.c.o
+cpSafety: CMakeFiles/cpSafety.dir/src/xxhash.c.o
+cpSafety: CMakeFiles/cpSafety.dir/src/xxhsum.c.o
 cpSafety: CMakeFiles/cpSafety.dir/build.make
-cpSafety: libxxHash.a
 cpSafety: CMakeFiles/cpSafety.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cpSafety"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lad/workspaces/cpSafety/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable cpSafety"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpSafety.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

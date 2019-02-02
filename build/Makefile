@@ -123,18 +123,32 @@ cpSafety/fast:
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/build
 .PHONY : cpSafety/fast
 
-#=============================================================================
-# Target rules for targets named xxHash
+src/copyH.o: src/copyH.c.o
 
-# Build rule for target.
-xxHash: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 xxHash
-.PHONY : xxHash
+.PHONY : src/copyH.o
 
-# fast build rule for target.
-xxHash/fast:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/build
-.PHONY : xxHash/fast
+# target to build an object file
+src/copyH.c.o:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/copyH.c.o
+.PHONY : src/copyH.c.o
+
+src/copyH.i: src/copyH.c.i
+
+.PHONY : src/copyH.i
+
+# target to preprocess a source file
+src/copyH.c.i:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/copyH.c.i
+.PHONY : src/copyH.c.i
+
+src/copyH.s: src/copyH.c.s
+
+.PHONY : src/copyH.s
+
+# target to generate assembly for a file
+src/copyH.c.s:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/copyH.c.s
+.PHONY : src/copyH.c.s
 
 src/main.o: src/main.c.o
 
@@ -163,32 +177,32 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/xxHash.o: src/xxHash.c.o
+src/xxhash.o: src/xxhash.c.o
 
-.PHONY : src/xxHash.o
+.PHONY : src/xxhash.o
 
 # target to build an object file
-src/xxHash.c.o:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxHash.c.o
-.PHONY : src/xxHash.c.o
+src/xxhash.c.o:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhash.c.o
+.PHONY : src/xxhash.c.o
 
-src/xxHash.i: src/xxHash.c.i
+src/xxhash.i: src/xxhash.c.i
 
-.PHONY : src/xxHash.i
+.PHONY : src/xxhash.i
 
 # target to preprocess a source file
-src/xxHash.c.i:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxHash.c.i
-.PHONY : src/xxHash.c.i
+src/xxhash.c.i:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhash.c.i
+.PHONY : src/xxhash.c.i
 
-src/xxHash.s: src/xxHash.c.s
+src/xxhash.s: src/xxhash.c.s
 
-.PHONY : src/xxHash.s
+.PHONY : src/xxhash.s
 
 # target to generate assembly for a file
-src/xxHash.c.s:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxHash.c.s
-.PHONY : src/xxHash.c.s
+src/xxhash.c.s:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhash.c.s
+.PHONY : src/xxhash.c.s
 
 src/xxhsum.o: src/xxhsum.c.o
 
@@ -196,7 +210,7 @@ src/xxhsum.o: src/xxhsum.c.o
 
 # target to build an object file
 src/xxhsum.c.o:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxhsum.c.o
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhsum.c.o
 .PHONY : src/xxhsum.c.o
 
 src/xxhsum.i: src/xxhsum.c.i
@@ -205,7 +219,7 @@ src/xxhsum.i: src/xxhsum.c.i
 
 # target to preprocess a source file
 src/xxhsum.c.i:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxhsum.c.i
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhsum.c.i
 .PHONY : src/xxhsum.c.i
 
 src/xxhsum.s: src/xxhsum.c.s
@@ -214,7 +228,7 @@ src/xxhsum.s: src/xxhsum.c.s
 
 # target to generate assembly for a file
 src/xxhsum.c.s:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/src/xxhsum.c.s
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/xxhsum.c.s
 .PHONY : src/xxhsum.c.s
 
 # Help Target
@@ -226,13 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpSafety"
-	@echo "... xxHash"
+	@echo "... src/copyH.o"
+	@echo "... src/copyH.i"
+	@echo "... src/copyH.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/xxHash.o"
-	@echo "... src/xxHash.i"
-	@echo "... src/xxHash.s"
+	@echo "... src/xxhash.o"
+	@echo "... src/xxhash.i"
+	@echo "... src/xxhash.s"
 	@echo "... src/xxhsum.o"
 	@echo "... src/xxhsum.i"
 	@echo "... src/xxhsum.s"

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libxxHash.a  CMakeFiles/xxHash.dir/src/xxHash.c.o CMakeFiles/xxHash.dir/src/xxhsum.c.o
-/usr/bin/ranlib libxxHash.a

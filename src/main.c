@@ -19,12 +19,11 @@ int main (int argc, char *argv[])
     }
     printf("\n");
     printf("--- Begin copy ---\n");
-    ls_dir(".");
+    ls_dir(argv[1]);
     printf("--- End copy ---\n");
 
     return 0;
 }
-
 
 void ls_dir(char*nameDir){
 
@@ -33,7 +32,18 @@ void ls_dir(char*nameDir){
 
     if(dir){
         while( (d=readdir(dir)) ){
-            printf("%s\n",d->d_name);
+            if (!((!(strcmp(d->d_name,"."))) || (!(strcmp(d->d_name,"..")))) ) {
+                /* code */
+                if (d->d_name[0]=='.') {
+                printf("Hidden file - ");
+                }              
+                printf("%s and dir type %d\n ",d->d_name, d->d_type);
+
+            }else
+            {
+               printf("rejetc  . and .. - ");
+               printf("%s\n ",d->d_name);
+            }
         }
         closedir(dir);
     }

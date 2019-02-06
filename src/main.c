@@ -5,6 +5,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <dirent.h>
+#ifdef WIN
+    #include 'dirent.h'
+#else
+    #include <dirent.h>
+#endif
 
 //#include <ncurses.h>
 
@@ -65,9 +70,6 @@ void ls_dir(char*nameDir){
                     {
                         printf("%s and type %d\n",d->d_name, d->d_type);
                     }
-                    
-                    
-                    
                 }              
             } 
         }

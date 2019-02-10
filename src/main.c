@@ -14,6 +14,9 @@
     #include 'inclide/dirent.h'
 #endif
 
+// type perso
+typedef unsigned long long U64;
+
 //#include <ncurses.h>
 
 #define ANSI_COLOR_RED     "\x1b[31m"
@@ -57,7 +60,7 @@ int main (int argc, char *argv[])
 
 void ls_dir(char*nameDir){
 
-    struct fileHash current;
+    //struct fileHash current;
     struct dirent* d;
     char pathWithFile[1024];
 
@@ -85,6 +88,7 @@ void ls_dir(char*nameDir){
     }
 }
 int compute( char* filename){
-
-    return BMK_hash(filename, algo_xxh64, little_endian);
+    U64 u64;
+    //U64 hashResult;
+    return BMK_hash_LAD(filename, algo_xxh64, little_endian, u64);
 }

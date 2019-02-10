@@ -590,7 +590,96 @@ static void BMK_hashStream(void* xxhHashValue, const algoType hashType, FILE* in
 
     return 0;
 }
+//----------------------------------------------------------------------------------------
+//-- Personnal fonction idem with BMK_hash with additional parameter for return the HASH
+//----------------------------------------------------------------------------------------
+int BMK_hash_LAD(const char* fileName,
+             const algoType hashType,
+             const endianess displayEndianess,
+             U64 hashResult)
+{
+    FILE*  inFile;
+    size_t const blockSize = 64 KB;
+    void*  buffer;
+    U32    h32 = 0;
+    U64    h64 = 0;
 
+    /* Check file existence */
+    if (fileName == stdinName) {
+        inFile = stdin;
+        SET_BINARY_MODE(stdin);
+    }
+    else
+        inFile = fopen( fileName, "rb" );
+    if (inFile==NULL) {
+        DISPLAY( "Pb opening %s\n", fileName);
+        return 1;
+    }
+
+    /* Memory allocation & restrictions */
+    buffer = malloc(blockSize);
+    if(!buffer) {
+        DISPLAY("\nError: not enough memory!\n");
+        fclose(inFile);
+        return 1;
+    }
+
+    /* loading notification */
+    {   const size_t fileNameSize = strlen(fileName);
+        const char* const fileNameEnd = fileName + fileNameSize;
+        const size_t maxInfoFilenameSize = fileNameSize > 30 ? 30 : fileNameSize;
+        size_t infoFilenameSize = 1;
+        while ( (infoFilenameSize < maxInfoFilenameSize)
+                &&(fileNameEnd[-1-infoFilenameSize] != '/')
+                &&(fileNameEnd[-1-infoFilenameSize] != '\\') )
+            infoFilenameSize++;
+        DISPLAY("\rLoading %s...  \r", fileNameEnd - infoFilenameSize);
+
+        /* Load file & update hash */
+        switch(hashType)
+        {
+            case algo_xxh32:
+                BMK_hashStream(&h32, algo_xxh32, inFile, buffer, blockSize);
+                break;
+            case algo_xxh64:
+                BMK_hashStream(&h64, algo_xxh64, inFile, buffer, blockSize);
+                break;
+            default:
+                break;
+        }
+
+        fclose(inFile);
+        free(buffer);
+        DISPLAY("%s             \r", fileNameEnd - infoFilenameSize);  /* erase line */
+    }
+
+    /* display Hash */
+    switch(hashType)
+    {
+        case algo_xxh32:
+        {   XXH32_canonical_t hcbe32;
+            XXH32_canonicalFromHash(&hcbe32, h32);
+            displayEndianess==big_endian ?
+            BMK_display_BigEndian(&hcbe32, sizeof(hcbe32)) : BMK_display_LittleEndian(&hcbe32, sizeof(hcbe32));
+            //DISPLAYRESULT("  %s\n", fileName);
+            break;
+        }
+        case algo_xxh64:
+        {   XXH64_canonical_t hcbe64;
+            XXH64_canonicalFromHash(&hcbe64, h64);
+            displayEndianess==big_endian ?
+            BMK_display_BigEndian(&hcbe64, sizeof(hcbe64)) : BMK_display_LittleEndian(&hcbe64, sizeof(hcbe64));
+            //DISPLAYRESULT("  %s\n", fileName);
+            break;
+        }
+        default:
+            break;
+    }
+
+    return 0;
+}
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static int BMK_hashFiles(const char** fnList, int fnTotal,
                          algoType hashType, endianess displayEndianess)

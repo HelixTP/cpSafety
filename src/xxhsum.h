@@ -20,3 +20,8 @@ typedef enum { big_endian, little_endian} endianess;
  int BMK_hash(const char* fileName,
                     const algoType hashType,
                     const endianess displayEndianess);
+
+int BMK_hash_LAD(const char* fileName,
+                 const algoType hashType,
+                 const endianess displayEndianess,
+                 unsigned long long hashResult);

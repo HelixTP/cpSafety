@@ -5,10 +5,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <dirent.h>
+#include "fileHash.h"
+
+#include "xxhash.h"
+#include "xxhsum.h"
+
 #ifdef WIN
-    #include 'dirent.h'
-#else
-    #include <dirent.h>
+    #include 'inclide/dirent.h'
 #endif
 
 //#include <ncurses.h>
@@ -22,6 +25,7 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 void ls_dir(char*nameDir);
+int compute( char* filename);
 
 int main (int argc, char *argv[])
 {
@@ -53,26 +57,34 @@ int main (int argc, char *argv[])
 
 void ls_dir(char*nameDir){
 
-    DIR*dir=opendir(nameDir);
-    char subdir[256];
+    struct fileHash current;
     struct dirent* d;
+    char pathWithFile[1024];
+
+    DIR*dir=opendir(nameDir);
     printf(ANSI_COLOR_GREEN);
     if(dir){
         while( (d=readdir(dir)) ){
             if (!((!(strcmp(d->d_name,"."))) || (!(strcmp(d->d_name,"..")))) ) {
-                if (!(d->d_name[0]=='.')) {
+                if (d->d_name[0]!='.') {
                     if (d->d_type == 4) {
-                        printf("----------Directory-------- ");
-                        printf("%s+%s\n",nameDir,d->d_name);
-                        sprintf(subdir,"%s/%s",nameDir,d->d_name);
-                        ls_dir(subdir);
+/*                        printf("----------Directory-------- ");
+                        printf("%s+%s\n",nameDir,d->d_name);*/
+                        sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
+                        ls_dir(pathWithFile);
                     }else
                     {
-                        printf("%s and type %d\n",d->d_name, d->d_type);
+                        sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
+                        compute(pathWithFile);
+                        printf("%s\n",pathWithFile);
                     }
-                }              
-            } 
+                }
+            }
         }
         closedir(dir);
     }
+}
+int compute( char* filename){
+
+    return BMK_hash(filename, algo_xxh64, little_endian);
 }

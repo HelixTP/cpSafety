@@ -13,6 +13,8 @@ add_executable(cpSafety
 		src/xxhash.c
 		src/xxhash.h
 		src/xxhsum.c
-		src/xxhsum.h)
+		src/xxhsum.h
+		src/fileHash.h
+		)
 
 target_link_libraries(cpSafety ${CURSES_LIBRARIES})

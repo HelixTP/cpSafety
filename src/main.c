@@ -85,6 +85,7 @@ void ls_dir(char*nameDir){
             }
         }
         closedir(dir);
+
     }
 }
 int compute( char* filename){

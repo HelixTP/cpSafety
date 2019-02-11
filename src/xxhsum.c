@@ -450,6 +450,17 @@ static void BMK_display_LittleEndian(const void* ptr, size_t length)
 {
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
+    /*
+     * For make strin of hash
+     */
+    char *strHash;
+    strHash = malloc(length);
+    if(strHash == NULL)
+        exit(EXIT_FAILURE);
+    /*
+     * End
+     */
+
     for (idx=length-1; idx<length; idx--)    /* intentional underflow to negative to detect end */
         DISPLAYRESULT("%02x", p[idx]);
 }
@@ -458,8 +469,9 @@ static void BMK_display_BigEndian(const void* ptr, size_t length)
 {
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
+
     for (idx=0; idx<length; idx++)
-        DISPLAYRESULT("%02x", p[idx]);
+        DISPLAYRESULT(" %02x", p[idx]);
 }
 
 static void BMK_hashStream(void* xxhHashValue, const algoType hashType, FILE* inFile, void* buffer, size_t blockSize)

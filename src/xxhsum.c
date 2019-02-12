@@ -55,6 +55,8 @@
 #include <sys/stat.h>   /* stat64 */
 #include <time.h>       /* clock_t, clock, CLOCKS_PER_SEC */
 
+#include <string.h>
+
 #define XXH_STATIC_LINKING_ONLY   /* *_state_t */
 #include "xxhash.h"
 #include "xxhsum.h"
@@ -451,10 +453,11 @@ static void BMK_display_LittleEndian(const void* ptr, size_t length)
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
     /*
-     * For make strin of hash
+     * For make string of hash
      */
+    char cchar[3];
     char *strHash;
-    strHash = malloc(length);
+    strHash = malloc((length*2)+1);
     if(strHash == NULL)
         exit(EXIT_FAILURE);
     /*
@@ -462,7 +465,14 @@ static void BMK_display_LittleEndian(const void* ptr, size_t length)
      */
 
     for (idx=length-1; idx<length; idx--)    /* intentional underflow to negative to detect end */
+    {
         DISPLAYRESULT("%02x", p[idx]);
+        sprintf(cchar,"%02x", p[idx]);
+        strcat(strHash+(idx*2),cchar);
+
+    }
+    strcat(strHash+14,"\0");
+    printf("-- %s --",strHash);
 }
 
 static void BMK_display_BigEndian(const void* ptr, size_t length)
@@ -662,6 +672,7 @@ int BMK_hash_LAD(const char* fileName,
 
         fclose(inFile);
         free(buffer);
+
         DISPLAY("%s             \r", fileNameEnd - infoFilenameSize);  /* erase line */
     }
 

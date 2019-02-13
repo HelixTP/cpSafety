@@ -61,3 +61,7 @@ dkms.conf
 /build
 /cmake-build-Debug
 .DS_Store
+
+#file to ignore
+exemple.h
+xxhsum.c

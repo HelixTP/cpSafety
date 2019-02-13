@@ -59,7 +59,7 @@
 
 #define XXH_STATIC_LINKING_ONLY   /* *_state_t */
 #include "xxhash.h"
-#include "xxhsum.h"
+
 
 /*-************************************
 *  OS-Specific Includes

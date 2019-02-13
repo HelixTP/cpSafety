@@ -8,13 +8,16 @@ include_directories(src)
 
 include_directories(${CURSES_INCLUDE_DIR})
 
+
+ADD_LIBRARY( xxHash STATIC
+		src/xxhash.c
+		src/xxhash.h )
+
 add_executable(cpSafety
 		src/main.c
-		src/xxhash.c
-		src/xxhash.h
-		src/xxhsum.c
-		src/xxhsum.h
-		src/fileHash.h
-		)
 
-target_link_libraries(cpSafety ${CURSES_LIBRARIES})
+##		src/xxhsum.c
+		src/fileHash.h
+        src/main.h)
+
+target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash)

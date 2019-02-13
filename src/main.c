@@ -2,33 +2,36 @@
 // Created by lad on 1/25/19.
 //
 
-#include <stdio.h>
-#include <string.h>
-#include <dirent.h>
-#include "fileHash.h"
+#include "main.h"
 
-#include "xxhash.h"
-#include "xxhsum.h"
-
-#ifdef WIN
-    #include 'inclide/dirent.h'
+/*-************************************
+*  OS-Specific Includes
+**************************************/
+#if defined(MSDOS) || defined(OS2) || defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__)
+#  include <fcntl.h>    /* _O_BINARY */
+#  include <io.h>       /* _setmode, _isatty */
+#  ifdef __MINGW32__
+   int _fileno(FILE *stream);   /* MINGW somehow forgets to include this windows declaration into <stdio.h> */
+#  endif
+#  define SET_BINARY_MODE(file) _setmode(_fileno(file), _O_BINARY)
+#  define IS_CONSOLE(stdStream) _isatty(_fileno(stdStream))
+#else
+#  include <unistd.h>   /* isatty, STDIN_FILENO */
+#  define SET_BINARY_MODE(file)
+#  define IS_CONSOLE(stdStream) isatty(STDIN_FILENO)
 #endif
 
-// type perso
-typedef unsigned long long U64;
-
-//#include <ncurses.h>
-
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
-#define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
+/* ************************************
+*  Display macros
+**************************************/
+#define DISPLAY(...)         fprintf(stderr, __VA_ARGS__)
+#define DISPLAYRESULT(...)   fprintf(stdout, __VA_ARGS__)
+#define DISPLAYLEVEL(l, ...) if (g_displayLevel>=l) DISPLAY(__VA_ARGS__);
 
 void ls_dir(char*nameDir);
 int compute( char* filename);
+
+static const char stdinName[] = "-";
 
 int main (int argc, char *argv[])
 {
@@ -91,5 +94,77 @@ void ls_dir(char*nameDir){
 int compute( char* filename){
     U64 u64;
     //U64 hashResult;
-    return BMK_hash_LAD(filename, algo_xxh64, little_endian, u64);
+    return 0;
+}
+
+static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize)
+{
+    //XXH64_state_t state64;
+    XXH64_state_t* state64 = XXH64_createState();
+
+    size_t readSize;
+
+    /* Init */
+    XXH64_reset(state64, XXHSUM64_DEFAULT_SEED);
+
+    /* Load file & update hash */
+    readSize = 1;
+    while (readSize) {
+        readSize = fread(buffer, 1, blockSize, inFile);
+        XXH64_update(state64, buffer, readSize);
+    }
+    U64 const h64 = XXH64_digest(state64);
+    memcpy(xxhHashValue, &h64, sizeof(h64));
+}
+
+int BMK_hash(const char* fileName,
+             const endianess displayEndianess)
+{
+    FILE*  inFile;
+    size_t const blockSize = 64 KB;
+    void*  buffer;
+
+    U64    h64 = 0;
+
+    /* Check file existence */
+    if (fileName == stdinName) {
+        inFile = stdin;
+        SET_BINARY_MODE(stdin);
+    }
+    else
+        inFile = fopen( fileName, "rb" );
+    if (inFile==NULL) {
+        DISPLAY( "Pb opening %s\n", fileName);
+        return 1;
+    }
+
+    /* Memory allocation & restrictions */
+    buffer = malloc(blockSize);
+    if(!buffer) {
+        DISPLAY("\nError: not enough memory!\n");
+        fclose(inFile);
+        return 1;
+    }
+
+    /* loading notification */
+    {   const size_t fileNameSize = strlen(fileName);
+        const char* const fileNameEnd = fileName + fileNameSize;
+        const size_t maxInfoFilenameSize = fileNameSize > 30 ? 30 : fileNameSize;
+        size_t infoFilenameSize = 1;
+        while ( (infoFilenameSize < maxInfoFilenameSize)
+                &&(fileNameEnd[-1-infoFilenameSize] != '/')
+                &&(fileNameEnd[-1-infoFilenameSize] != '\\') )
+            infoFilenameSize++;
+        DISPLAY("\rLoading %s...  \r", fileNameEnd - infoFilenameSize);
+
+        /* Load file & update hash */
+        BMK_hashStream(&h64, inFile, buffer, blockSize);
+
+
+        fclose(inFile);
+        free(buffer);
+        DISPLAY("%s             \r", fileNameEnd - infoFilenameSize);  /* erase line */
+    }
+
+    return 0;
 }

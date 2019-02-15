@@ -60,6 +60,9 @@ dkms.conf
 #cmake
 /build
 /cmake-build-Debug
+/cmake-build-debug
+
+#mac os X
 .DS_Store
 
 #file to ignore

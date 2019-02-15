@@ -26,7 +26,6 @@
 **************************************/
 #define DISPLAY(...)         fprintf(stderr, __VA_ARGS__)
 #define DISPLAYRESULT(...)   fprintf(stdout, __VA_ARGS__)
-#define DISPLAYLEVEL(l, ...) if (g_displayLevel>=l) DISPLAY(__VA_ARGS__);
 
 void ls_dir(char*nameDir);
 int compute( char* filename);
@@ -62,10 +61,12 @@ int main (int argc, char *argv[])
 }
 
 void ls_dir(char*nameDir){
+    U64 u64;
 
     //struct fileHash current;
     struct dirent* d;
     char pathWithFile[1024];
+    XXH64_canonical_t hash;
 
     DIR*dir=opendir(nameDir);
     printf(ANSI_COLOR_GREEN);
@@ -74,28 +75,24 @@ void ls_dir(char*nameDir){
             if (!((!(strcmp(d->d_name,"."))) || (!(strcmp(d->d_name,"..")))) ) {
                 if (d->d_name[0]!='.') {
                     if (d->d_type == 4) {
-/*                        printf("----------Directory-------- ");
-                        printf("%s+%s\n",nameDir,d->d_name);*/
                         sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
                         ls_dir(pathWithFile);
                     }else
                     {
                         sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
-                        compute(pathWithFile);
-                        printf("%s\n",pathWithFile);
+                        u64 = BMK_hash(pathWithFile);
+
+                        XXH64_canonicalFromHash(&hash, u64);
+                        BMK_display_BigEndian(&hash, sizeof(hash));
+                        printf("%s\t : %s\t: %ld \n",pathWithFile,&hash,u64);
                     }
                 }
             }
         }
         closedir(dir);
-
     }
 }
-int compute( char* filename){
-    U64 u64;
-    //U64 hashResult;
-    return 0;
-}
+
 
 static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize)
 {
@@ -117,8 +114,7 @@ static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_
     memcpy(xxhHashValue, &h64, sizeof(h64));
 }
 
-int BMK_hash(const char* fileName,
-             const endianess displayEndianess)
+long long int BMK_hash(const char* fileName)
 {
     FILE*  inFile;
     size_t const blockSize = 64 KB;
@@ -135,7 +131,7 @@ int BMK_hash(const char* fileName,
         inFile = fopen( fileName, "rb" );
     if (inFile==NULL) {
         DISPLAY( "Pb opening %s\n", fileName);
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     /* Memory allocation & restrictions */
@@ -143,7 +139,7 @@ int BMK_hash(const char* fileName,
     if(!buffer) {
         DISPLAY("\nError: not enough memory!\n");
         fclose(inFile);
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     /* loading notification */
@@ -155,16 +151,21 @@ int BMK_hash(const char* fileName,
                 &&(fileNameEnd[-1-infoFilenameSize] != '/')
                 &&(fileNameEnd[-1-infoFilenameSize] != '\\') )
             infoFilenameSize++;
-        DISPLAY("\rLoading %s...  \r", fileNameEnd - infoFilenameSize);
 
         /* Load file & update hash */
         BMK_hashStream(&h64, inFile, buffer, blockSize);
 
-
         fclose(inFile);
         free(buffer);
-        DISPLAY("%s             \r", fileNameEnd - infoFilenameSize);  /* erase line */
     }
+    return h64;
+}
 
-    return 0;
+static void BMK_display_BigEndian(const void* ptr, size_t length)
+{
+    const BYTE* p = (const BYTE*)ptr;
+    size_t idx;
+
+    for (idx=0; idx<length; idx++)
+        DISPLAYRESULT("%02x", p[idx]);
 }

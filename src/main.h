@@ -19,9 +19,7 @@
 
 // type perso
 typedef unsigned long long U64;
-typedef enum { big_endian, little_endian} endianess;
-//typedef enum { algo_xxh32, algo_xxh64 } algoType;
-
+typedef unsigned char      BYTE;
 /* *************************************
 *  Constants
 ***************************************/
@@ -40,3 +38,9 @@ typedef enum { big_endian, little_endian} endianess;
 #define XXHSUM64_DEFAULT_SEED 0                   /* Default seed for algo_xxh64 */
 
 #endif //CPSAFETY_MAIN_H
+
+//function
+static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize);
+long long int BMK_hash(const char* fileName);
+static void BMK_display_BigEndian(const void* ptr, size_t length);
+

@@ -1,3 +1,3 @@
 # cpSafety
 
-Copy file and compare result by md5
+Copy file and compare result by hashing (xxHash)

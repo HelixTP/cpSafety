@@ -53,10 +53,8 @@ int main (int argc, char *argv[])
     printf("--- Begin copy ---\n");
     ls_dir(argv[1]);
     printf("--- End copy ---\n");
-    
-    //refresh(); 
-    //getch();
-    //endwin();
+
+
     return 0;
 }
 
@@ -84,7 +82,7 @@ void ls_dir(char*nameDir){
 
                         XXH64_canonicalFromHash(&hash, u64);
                         BMK_display_BigEndian(&hash, sizeof(hash));
-                        printf("%s\t : %s\t: %ld \n",pathWithFile,&hash,u64);
+                        printf("%s\t : %lld \n",pathWithFile,u64);
                     }
                 }
             }
@@ -163,9 +161,17 @@ long long int BMK_hash(const char* fileName)
 
 static void BMK_display_BigEndian(const void* ptr, size_t length)
 {
+    char ctmp[3];
+    char cHash[17] = "";
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
 
     for (idx=0; idx<length; idx++)
-        DISPLAYRESULT("%02x", p[idx]);
+    {
+        //DISPLAYRESULT("%02x", p[idx]);
+        sprintf(ctmp, "%02x", p[idx]);
+        strcat(cHash,ctmp);
+    }
+    printf(" %s\t",cHash);
+
 }

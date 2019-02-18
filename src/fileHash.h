@@ -6,11 +6,13 @@
 #define CPSAFETY_FILEHASH_H
 
 
-struct fileHash{
+typedef struct fileHash{
     char filename[256];
     char path[1024];
-    char hash[10];
-}fileHash;
+    long long int hash;
+    struct fileHash *next;
+}fileHash, Hash;
 
+Hash new_hash(void);
 
 #endif //CPSAFETY_FILEHASH_H

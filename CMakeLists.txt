@@ -13,9 +13,13 @@ ADD_LIBRARY( xxHash STATIC
 		src/xxhash.c
 		src/xxhash.h )
 
+ADD_LIBRARY( fileHash STATIC
+		src/fileHash.c
+		src/fileHash.h )
+
 add_executable(cpSafety
 		src/main.c
-		src/fileHash.h
-        src/main.h)
 
-target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash)
+        src/main.h )
+
+target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash fileHash)

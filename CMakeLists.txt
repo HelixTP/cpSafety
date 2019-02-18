@@ -15,8 +15,6 @@ ADD_LIBRARY( xxHash STATIC
 
 add_executable(cpSafety
 		src/main.c
-
-##		src/xxhsum.c
 		src/fileHash.h
         src/main.h)
 

@@ -11,14 +11,24 @@ typedef enum
     true //1
 }Bool;
 
-
-typedef struct fileHash{
+typedef struct FileHash{
     char filename[256];
     char path[1024];
     long long int hash;
-    struct fileHash *next;
-}fileHash, *Hash;
+}FileHash;
 
-Hash new_hash(void);
+/* Définition d'une Pile */
+typedef struct StackElement
+{
+    FileHash fh;
+    struct StackElement *next;
+}StackElement, *Stack;
+
+
+
+
+Stack new_stack(void);
+Bool is_empty_stack(Stack st);
+Stack push_hash(Stack st, FileHash x);
 
 #endif //CPSAFETY_FILEHASH_H

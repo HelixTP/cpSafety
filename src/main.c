@@ -61,10 +61,17 @@ int main (int argc, char *argv[])
 void ls_dir(char*nameDir){
     U64 u64;
 
-    //struct fileHash current;
+
     struct dirent* d;
     char pathWithFile[1024];
     XXH64_canonical_t hash;
+    char cHash[17] = "";
+
+    //def stack
+    Stack sta = new_stack();
+
+    //def FileHash
+    FileHash fh;
 
     DIR*dir=opendir(nameDir);
     printf(ANSI_COLOR_GREEN);
@@ -77,17 +84,27 @@ void ls_dir(char*nameDir){
                         ls_dir(pathWithFile);
                     }else
                     {
+
+
                         sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
                         u64 = BMK_hash(pathWithFile);
 
                         XXH64_canonicalFromHash(&hash, u64);
-                        BMK_display_BigEndian(&hash, sizeof(hash));
-                        printf("%s\t : %lld \n",pathWithFile,u64);
+                        BMK_display_BigEndian(&hash, sizeof(hash),cHash);
+
+                        printf("%s\t : %lld \t %s\t",pathWithFile,u64,cHash);
+
+                        strcpy(fh.path,nameDir);
+                        strcpy(fh.filename,d->d_name);
+                        fh.hash = u64;
+                        printf("%s : %s \t : %lld \n",fh.path,fh.filename,u64);
+
                     }
                 }
             }
         }
         closedir(dir);
+        sta = clear_stack(sta);
     }
 }
 
@@ -112,7 +129,7 @@ static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_
     memcpy(xxhHashValue, &h64, sizeof(h64));
 }
 
-long long int BMK_hash(const char* fileName)
+U64 BMK_hash(const char* fileName)
 {
     FILE*  inFile;
     size_t const blockSize = 64 KB;
@@ -159,10 +176,10 @@ long long int BMK_hash(const char* fileName)
     return h64;
 }
 
-static void BMK_display_BigEndian(const void* ptr, size_t length)
+static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash)
 {
     char ctmp[3];
-    char cHash[17] = "";
+    char cHashtmp[17];
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
 
@@ -170,8 +187,9 @@ static void BMK_display_BigEndian(const void* ptr, size_t length)
     {
         //DISPLAYRESULT("%02x", p[idx]);
         sprintf(ctmp, "%02x", p[idx]);
-        strcat(cHash,ctmp);
+        strcat(cHashtmp,ctmp);
     }
-    printf(" %s\t",cHash);
+    //printf(" %s\t",cHashtmp);
 
+    strcpy(cHash,cHashtmp);
 }

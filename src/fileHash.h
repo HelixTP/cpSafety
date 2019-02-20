@@ -25,10 +25,10 @@ typedef struct StackElement
 }StackElement, *Stack;
 
 
-
-
 Stack new_stack(void);
 Bool is_empty_stack(Stack st);
-Stack push_hash(Stack st, FileHash x);
+Stack push_stack(Stack st, FileHash x);
+Stack pop_stack(Stack st);
+Stack clear_stack(Stack st);
 
 #endif //CPSAFETY_FILEHASH_H

@@ -10,7 +10,7 @@ Stack new_stack(void)
 {
     return NULL;
 }
-Stack push_hash(Stack st, FileHash x)
+Stack push_stack(Stack st, FileHash x)
 {
     StackElement *element;
     element = malloc(sizeof(*element));
@@ -30,4 +30,25 @@ Bool is_empty_stack(Stack st)
         return true;
 
     return false;
+}
+
+Stack pop_stack(Stack st)
+{
+    StackElement *element;
+
+    if(is_empty_stack(st))
+        return new_stack();
+
+    element = st->next;
+    free(st);
+
+    return element;
+}
+
+Stack clear_stack(Stack st)
+{
+    while(!is_empty_stack(st))
+        st = pop_stack(st);
+
+    return new_stack();
 }

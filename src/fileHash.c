@@ -52,3 +52,31 @@ Stack clear_stack(Stack st)
 
     return new_stack();
 }
+
+void print_stack(Stack st)
+{
+    if(is_empty_stack(st))
+    {
+        printf("Rien a afficher, la Pile est vide.\n");
+        return;
+    }
+
+    while(!is_empty_stack(st))
+    {
+        printf("%s\t%s : %s \t : %lld\n",st->fh.cHash ,st->fh.path,st->fh.filename,st->fh.hash);
+        st = st->next;
+    }
+}
+
+int stack_length(Stack st)
+{
+    int length = 0;
+
+    while(!is_empty_stack(st))
+    {
+        length++;
+        st = st->next;
+    }
+
+    return length;
+}

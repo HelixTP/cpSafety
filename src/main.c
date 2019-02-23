@@ -61,7 +61,6 @@ int main (int argc, char *argv[])
 void ls_dir(char*nameDir){
     U64 u64;
 
-
     struct dirent* d;
     char pathWithFile[1024];
     XXH64_canonical_t hash;
@@ -92,20 +91,24 @@ void ls_dir(char*nameDir){
                         XXH64_canonicalFromHash(&hash, u64);
                         BMK_display_BigEndian(&hash, sizeof(hash),cHash);
 
-                        printf("%s\t : %lld \t %s\t",pathWithFile,u64,cHash);
-
                         strcpy(fh.path,nameDir);
                         strcpy(fh.filename,d->d_name);
+                        strcpy(fh.cHash,cHash);
                         fh.hash = u64;
-                        printf("%s : %s \t : %lld \n",fh.path,fh.filename,u64);
+
+                        sta = push_stack(sta,fh);
 
                     }
                 }
             }
         }
         closedir(dir);
-        sta = clear_stack(sta);
+
+
     }
+    print_stack(sta);
+    printf("Hauteur de la pile : %d\n",stack_length(sta));
+    sta = clear_stack(sta);
 }
 
 

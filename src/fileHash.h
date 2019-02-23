@@ -15,6 +15,7 @@ typedef struct FileHash{
     char filename[256];
     char path[1024];
     long long int hash;
+    char cHash[17];
 }FileHash;
 
 /* Définition d'une Pile */
@@ -30,5 +31,7 @@ Bool is_empty_stack(Stack st);
 Stack push_stack(Stack st, FileHash x);
 Stack pop_stack(Stack st);
 Stack clear_stack(Stack st);
+void print_stack(Stack st);
+int stack_length(Stack st);
 
 #endif //CPSAFETY_FILEHASH_H

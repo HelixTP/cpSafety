@@ -44,4 +44,6 @@ static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_
 U64 BMK_hash(const char* fileName);
 static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash);
 
+Stack ls_dir(char*nameDir,Stack sta);
+int compute( char* filename);
 

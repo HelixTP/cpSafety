@@ -27,8 +27,7 @@
 #define DISPLAY(...)         fprintf(stderr, __VA_ARGS__)
 #define DISPLAYRESULT(...)   fprintf(stdout, __VA_ARGS__)
 
-void ls_dir(char*nameDir);
-int compute( char* filename);
+
 
 static const char stdinName[] = "-";
 
@@ -51,23 +50,28 @@ int main (int argc, char *argv[])
     }
     printf("\n");
     printf("--- Begin copy ---\n");
-    ls_dir(argv[1]);
-    printf("--- End copy ---\n");
 
+    //Initialise la pile
+    Stack sta;
+    sta = new_stack();
+
+    sta = ls_dir(argv[1],sta);
+    printf("--- End copy ---\n");
+    print_stack(sta);
+    printf("Hauteur de la pile : %d\n",stack_length(sta));
+    //libere la pile
+    sta = clear_stack(sta);
 
     return 0;
 }
 
-void ls_dir(char*nameDir){
-    U64 u64;
+Stack ls_dir(char*nameDir, Stack sta){
 
+    U64 u64;
     struct dirent* d;
     char pathWithFile[1024];
     XXH64_canonical_t hash;
     char cHash[17] = "";
-
-    //def stack
-    Stack sta = new_stack();
 
     //def FileHash
     FileHash fh;
@@ -80,11 +84,9 @@ void ls_dir(char*nameDir){
                 if (d->d_name[0]!='.') {
                     if (d->d_type == 4) {
                         sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
-                        ls_dir(pathWithFile);
+                        sta = ls_dir(pathWithFile,sta);
                     }else
                     {
-
-
                         sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
                         u64 = BMK_hash(pathWithFile);
 
@@ -103,12 +105,11 @@ void ls_dir(char*nameDir){
             }
         }
         closedir(dir);
-
+        printf("Hauteur de la pile :%d\n",stack_length(sta));
 
     }
-    print_stack(sta);
-    printf("Hauteur de la pile : %d\n",stack_length(sta));
-    sta = clear_stack(sta);
+    return sta;
+
 }
 
 

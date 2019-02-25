@@ -15,19 +15,21 @@
 #  endif
 #  define SET_BINARY_MODE(file) _setmode(_fileno(file), _O_BINARY)
 #  define IS_CONSOLE(stdStream) _isatty(_fileno(stdStream))
+#  include "include/dirent.h"
+char dirSeparator[] ="\\";
 #else
 #  include <unistd.h>   /* isatty, STDIN_FILENO */
 #  define SET_BINARY_MODE(file)
 #  define IS_CONSOLE(stdStream) isatty(STDIN_FILENO)
+char dirSeparator[] ="/";
 #endif
+
 
 /* ************************************
 *  Display macros
 **************************************/
 #define DISPLAY(...)         fprintf(stderr, __VA_ARGS__)
 #define DISPLAYRESULT(...)   fprintf(stdout, __VA_ARGS__)
-
-
 
 static const char stdinName[] = "-";
 
@@ -73,12 +75,12 @@ int main(int argc, char **argv) {
     if(argc > 2)
     {
 
-        printf("--- Read origin %s ---\n", argv[2]);
+        printf("--- Read dest %s ---\n", argv[2]);
         //Destination data processing
         Stack staDestination;
         staDestination = new_stack();
         staDestination = ls_dir(argv[2],staDestination);
-        printf("--- End read origin ---\n");
+        printf("--- End read dest ---\n");
         //print_stack(staDestination);
         printf("Number of element destination: %d\n",stack_length(staDestination));
         staDestination = clear_stack(staDestination);
@@ -106,12 +108,13 @@ Stack ls_dir(char*nameDir, Stack sta){
         while( (d=readdir(dir)) ){
             if (!((!(strcmp(d->d_name,"."))) || (!(strcmp(d->d_name,"..")))) ) {
                 if (d->d_name[0]!='.') {
-                    if (d->d_type == 4) {
-                        sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
+                    if (d->d_type == DT_DIR) {
+                        sprintf(pathWithFile,"%s%s%s",nameDir,dirSeparator,d->d_name);
                         sta = ls_dir(pathWithFile,sta);
                     }else
                     {
-                        sprintf(pathWithFile,"%s/%s",nameDir,d->d_name);
+                        sprintf(pathWithFile,"%s%s%s",nameDir,dirSeparator,d->d_name);
+                        printf("%s\n",pathWithFile);
                         u64 = BMK_hash(pathWithFile);
 
                         XXH64_canonicalFromHash(&hash, u64);

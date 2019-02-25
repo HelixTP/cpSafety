@@ -13,10 +13,6 @@
 
 #include "xxhash.h"
 
-#ifdef WIN
-#include 'inclide/dirent.h'
-#endif
-
 // type perso
 typedef unsigned long long U64;
 typedef unsigned char      BYTE;

@@ -31,8 +31,14 @@
 
 static const char stdinName[] = "-";
 
-int main (int argc, char *argv[])
-{
+/*
+ * \version 0.1.0
+ * \brief Courte description.
+ *      Suite de la courte description.
+ */
+
+
+int main(int argc, char **argv) {
     //initscr();
     printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
     printf(ANSI_COLOR_GREEN   "This text is GREEN!"   ANSI_COLOR_RESET "\n");
@@ -40,7 +46,7 @@ int main (int argc, char *argv[])
     printf(ANSI_COLOR_BLUE    "This text is BLUE!"    ANSI_COLOR_RESET "\n");
     printf(ANSI_COLOR_MAGENTA "This text is MAGENTA!" ANSI_COLOR_RESET "\n");
     printf(ANSI_COLOR_CYAN    "This text is CYAN!"    ANSI_COLOR_RESET "\n");
-    
+
     if(argc > 1){
         printf("nombre d'argument : %d\n",argc);
         for (int i = 1;i < argc; ++i) {
@@ -52,7 +58,7 @@ int main (int argc, char *argv[])
     }
 
     printf("\n");
-    
+
     printf("--- Read origin %s ---\n", argv[1]);
 
     //Origin data processing
@@ -82,6 +88,8 @@ int main (int argc, char *argv[])
 }
 
 Stack ls_dir(char*nameDir, Stack sta){
+
+    /* LS_DIR : Browse recursively */
 
     U64 u64;
     struct dirent* d;

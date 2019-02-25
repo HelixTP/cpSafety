@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
     staOrigin = new_stack();
     staOrigin = ls_dir(argv[1],staOrigin);
     printf("--- End read origin ---\n");
-    //print_stack(staOrigin);
+    print_stack(staOrigin);
     printf("Number of element origin: %d\n",stack_length(staOrigin));
     staOrigin = clear_stack(staOrigin);
     //END
@@ -114,7 +114,7 @@ Stack ls_dir(char*nameDir, Stack sta){
                     }else
                     {
                         sprintf(pathWithFile,"%s%s%s",nameDir,dirSeparator,d->d_name);
-                        printf("%s\n",pathWithFile);
+                        //printf("%s\n",pathWithFile);
                         u64 = BMK_hash(pathWithFile);
 
                         XXH64_canonicalFromHash(&hash, u64);

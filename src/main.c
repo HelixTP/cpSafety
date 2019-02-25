@@ -34,12 +34,13 @@ static const char stdinName[] = "-";
 int main (int argc, char *argv[])
 {
     //initscr();
-  printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
-  printf(ANSI_COLOR_GREEN   "This text is GREEN!"   ANSI_COLOR_RESET "\n");
-  printf(ANSI_COLOR_YELLOW  "This text is YELLOW!"  ANSI_COLOR_RESET "\n");
-  printf(ANSI_COLOR_BLUE    "This text is BLUE!"    ANSI_COLOR_RESET "\n");
-  printf(ANSI_COLOR_MAGENTA "This text is MAGENTA!" ANSI_COLOR_RESET "\n");
-  printf(ANSI_COLOR_CYAN    "This text is CYAN!"    ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_GREEN   "This text is GREEN!"   ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_YELLOW  "This text is YELLOW!"  ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_BLUE    "This text is BLUE!"    ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_MAGENTA "This text is MAGENTA!" ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_CYAN    "This text is CYAN!"    ANSI_COLOR_RESET "\n");
+    
     if(argc > 1){
         printf("nombre d'argument : %d\n",argc);
         for (int i = 1;i < argc; ++i) {
@@ -47,21 +48,36 @@ int main (int argc, char *argv[])
         }
     } else {
         printf("Pas d'argument \n");
+        return 0;
     }
+
     printf("\n");
-    printf("--- Begin copy ---\n");
+    
+    printf("--- Read origin %s ---\n", argv[1]);
 
-    //Initialise la pile
-    Stack sta;
-    sta = new_stack();
+    //Origin data processing
+    Stack staOrigin;
+    staOrigin = new_stack();
+    staOrigin = ls_dir(argv[1],staOrigin);
+    printf("--- End read origin ---\n");
+    //print_stack(staOrigin);
+    printf("Number of element origin: %d\n",stack_length(staOrigin));
+    staOrigin = clear_stack(staOrigin);
+    //END
+    if(argc > 2)
+    {
 
-    sta = ls_dir(argv[1],sta);
-    printf("--- End copy ---\n");
-    print_stack(sta);
-    printf("Hauteur de la pile : %d\n",stack_length(sta));
-    //libere la pile
-    sta = clear_stack(sta);
-
+        printf("--- Read origin %s ---\n", argv[2]);
+        //Destination data processing
+        Stack staDestination;
+        staDestination = new_stack();
+        staDestination = ls_dir(argv[2],staDestination);
+        printf("--- End read origin ---\n");
+        //print_stack(staDestination);
+        printf("Number of element destination: %d\n",stack_length(staDestination));
+        staDestination = clear_stack(staDestination);
+        //END
+    }
     return 0;
 }
 
@@ -99,13 +115,12 @@ Stack ls_dir(char*nameDir, Stack sta){
                         fh.hash = u64;
 
                         sta = push_stack(sta,fh);
-
                     }
                 }
             }
         }
         closedir(dir);
-        printf("Hauteur de la pile :%d\n",stack_length(sta));
+        //printf("Hauteur de la pile :%d\n",stack_length(sta));
 
     }
     return sta;

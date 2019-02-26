@@ -11,7 +11,7 @@
 #  include <fcntl.h>    /* _O_BINARY */
 #  include <io.h>       /* _setmode, _isatty */
 #  ifdef __MINGW32__
-   int _fileno(FILE *stream);   /* MINGW somehow forgets to include this windows declaration into <stdio.h> */
+//   int _fileno(FILE *stream);   /* MINGW somehow forgets to include this windows declaration into <stdio.h> */
 #  endif
 #  define SET_BINARY_MODE(file) _setmode(_fileno(file), _O_BINARY)
 #  define IS_CONSOLE(stdStream) _isatty(_fileno(stdStream))
@@ -235,10 +235,10 @@ static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash)
 
     strcpy(cHash,hashTmp);
 }
-
+/*
 static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash){
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
-    for (idx=length-1; idx<length; idx--)    /* intentional underflow to negative to detect end */
+    for (idx=length-1; idx<length; idx--)
         DISPLAYRESULT("%02x", p[idx]);
-}
+}*/

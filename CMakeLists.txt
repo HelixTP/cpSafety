@@ -4,7 +4,11 @@ project(cpSafety C)
 set(CMAKE_C_STANDARD 11)
 #find_package(Curses REQUIRED)
 
-#include_directories(src src/include)
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+	message(STATUS "Configure for windows")
+	include_directories(src src/include)
+endif()
+
 
 #include_directories(${CURSES_INCLUDE_DIR})
 

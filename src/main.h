@@ -39,7 +39,7 @@ typedef unsigned char      BYTE;
 static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize);
 U64 BMK_hash(const char* fileName);
 static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash);
-static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash));
+//static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash));
 
 Stack ls_dir(char*nameDir,Stack sta);
 int compute( char* filename);

@@ -39,7 +39,12 @@ static const char stdinName[] = "-";
  *      Suite de la courte description.
  */
 
-
+/**
+ *
+ * @param argc
+ * @param argv
+ * @return
+ */
 int main(int argc, char **argv) {
     //initscr();
     printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
@@ -138,7 +143,13 @@ Stack ls_dir(char*nameDir, Stack sta){
 
 }
 
-
+/**
+ *
+ * @param xxhHashValue
+ * @param inFile
+ * @param buffer
+ * @param blockSize
+ */
 static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize)
 {
     //XXH64_state_t state64;
@@ -208,18 +219,26 @@ U64 BMK_hash(const char* fileName)
 
 static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash)
 {
-    char ctmp[3];
-    char cHashtmp[17];
+    char cTmp[3];
+    char hashTmp[17];
     const BYTE* p = (const BYTE*)ptr;
+
     size_t idx;
 
     for (idx=0; idx<length; idx++)
     {
         //DISPLAYRESULT("%02x", p[idx]);
-        sprintf(ctmp, "%02x", p[idx]);
-        strcat(cHashtmp,ctmp);
+        sprintf(cTmp, "%02x", p[idx]);
+        strcat(hashTmp,cTmp);
     }
-    //printf(" %s\t",cHashtmp);
+    //printf(" %s\t",hashTmp);
 
-    strcpy(cHash,cHashtmp);
+    strcpy(cHash,hashTmp);
+}
+
+static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash){
+    const BYTE* p = (const BYTE*)ptr;
+    size_t idx;
+    for (idx=length-1; idx<length; idx--)    /* intentional underflow to negative to detect end */
+        DISPLAYRESULT("%02x", p[idx]);
 }

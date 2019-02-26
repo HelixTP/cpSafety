@@ -4,7 +4,7 @@ project(cpSafety C)
 set(CMAKE_C_STANDARD 11)
 #find_package(Curses REQUIRED)
 
-include_directories(src src/include)
+#include_directories(src src/include)
 
 #include_directories(${CURSES_INCLUDE_DIR})
 

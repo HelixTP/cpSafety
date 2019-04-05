@@ -1,0 +1,4 @@
+C:\Users\LAD-ANAL\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\183.5429.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=D:/mingw/mingw32/bin/mingw32-make.exe -DCMAKE_C_COMPILER=D:/mingw/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER=D:/mingw/mingw32/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\LAD-ANAL\workspaces\cpSafety
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/LAD-ANAL/workspaces/cpSafety/cmake-build-debug

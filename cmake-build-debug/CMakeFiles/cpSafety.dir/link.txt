@@ -1,0 +1,1 @@
+/usr/bin/gcc -g   CMakeFiles/cpSafety.dir/src/main.c.o  -o cpSafety libxxHash.a libfileHash.a 

@@ -2,11 +2,15 @@ cmake_minimum_required(VERSION 3.10)
 project(cpSafety C)
 
 set(CMAKE_C_STANDARD 11)
-find_package(Curses REQUIRED)
+#find_package(Curses REQUIRED)
 
-include_directories(src)
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+	message(STATUS "Configure for windows")
+	include_directories(src src/include)
+endif()
 
-include_directories(${CURSES_INCLUDE_DIR})
+
+#include_directories(${CURSES_INCLUDE_DIR})
 
 
 ADD_LIBRARY( xxHash STATIC
@@ -22,4 +26,5 @@ add_executable(cpSafety
 
         src/main.h )
 
-target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash fileHash)
+#target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash fileHash)
+target_link_libraries(cpSafety xxHash fileHash)

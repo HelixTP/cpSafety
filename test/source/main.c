@@ -11,7 +11,7 @@
 #  include <fcntl.h>    /* _O_BINARY */
 #  include <io.h>       /* _setmode, _isatty */
 #  ifdef __MINGW32__
-//   int _fileno(FILE *stream);   /* MINGW somehow forgets to include this windows declaration into <stdio.h> */
+   int _fileno(FILE *stream);   /* MINGW somehow forgets to include this windows declaration into <stdio.h> */
 #  endif
 #  define SET_BINARY_MODE(file) _setmode(_fileno(file), _O_BINARY)
 #  define IS_CONSOLE(stdStream) _isatty(_fileno(stdStream))
@@ -39,12 +39,7 @@ static const char stdinName[] = "-";
  *      Suite de la courte description.
  */
 
-/**
- *
- * @param argc
- * @param argv
- * @return
- */
+
 int main(int argc, char **argv) {
     //initscr();
     printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
@@ -143,13 +138,7 @@ Stack ls_dir(char*nameDir, Stack sta){
 
 }
 
-/**
- *
- * @param xxhHashValue
- * @param inFile
- * @param buffer
- * @param blockSize
- */
+
 static void BMK_hashStream(void* xxhHashValue, FILE* inFile, void* buffer, size_t blockSize)
 {
     //XXH64_state_t state64;
@@ -219,26 +208,18 @@ U64 BMK_hash(const char* fileName)
 
 static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash)
 {
-    char cTmp[3];
-    char hashTmp[17];
+    char ctmp[3];
+    char cHashtmp[17];
     const BYTE* p = (const BYTE*)ptr;
-
     size_t idx;
 
     for (idx=0; idx<length; idx++)
     {
         //DISPLAYRESULT("%02x", p[idx]);
-        sprintf(cTmp, "%02x", p[idx]);
-        strcat(hashTmp,cTmp);
+        sprintf(ctmp, "%02x", p[idx]);
+        strcat(cHashtmp,ctmp);
     }
-    //printf(" %s\t",hashTmp);
+    //printf(" %s\t",cHashtmp);
 
-    strcpy(cHash,hashTmp);
+    strcpy(cHash,cHashtmp);
 }
-/*
-static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash){
-    const BYTE* p = (const BYTE*)ptr;
-    size_t idx;
-    for (idx=length-1; idx<length; idx--)
-        DISPLAYRESULT("%02x", p[idx]);
-}*/

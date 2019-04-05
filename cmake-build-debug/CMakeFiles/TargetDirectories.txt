@@ -1,0 +1,5 @@
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/cpSafety.dir
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/edit_cache.dir
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/xxHash.dir
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/fileHash.dir

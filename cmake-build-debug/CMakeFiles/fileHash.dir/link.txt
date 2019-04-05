@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfileHash.a  CMakeFiles/fileHash.dir/src/fileHash.c.o
+/usr/bin/ranlib libfileHash.a

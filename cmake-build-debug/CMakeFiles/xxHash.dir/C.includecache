@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c
+stdlib.h
+-
+string.h
+-
+xxhash.h
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.h
+stdint.h
+-
+stdint.h
+-
+
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.h
+stddef.h
+-
+xxhash.c
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c
+

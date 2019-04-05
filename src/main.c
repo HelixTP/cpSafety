@@ -124,7 +124,7 @@ Stack ls_dir(char*nameDir, Stack sta){
 
                         XXH64_canonicalFromHash(&hash, u64);
                         BMK_display_BigEndian(&hash, sizeof(hash),cHash);
-
+                        //BMK_display_LittleEndian(&hash, sizeof(hash),cHash);
                         strcpy(fh.path,nameDir);
                         strcpy(fh.filename,d->d_name);
                         strcpy(fh.cHash,cHash);
@@ -236,9 +236,44 @@ static void BMK_display_BigEndian(const void* ptr, size_t length,char *cHash)
     strcpy(cHash,hashTmp);
 }
 /*
-static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash){
+static void BMK_display_BigEndian(const void* ptr, size_t length)
+{
+    const BYTE* p = (const BYTE*)ptr;
+    size_t idx;
+    for (idx=0; idx<length; idx++)
+        DISPLAYRESULT("%02x", p[idx]);
+
+}
+*/
+
+static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash)
+{
+    char cTmp[3];
+    char hashTmp[17];
+    char hashSplit[8][3]; // pour affichage de 8 nombres hexa
+
+    const BYTE* p = (const BYTE*)ptr;
+
+    size_t idx;
+
+    for (idx=length-1; idx<length; idx--)
+    {
+        //DISPLAYRESULT("%02x", p[idx]);*/
+        sprintf(cTmp, "%02x", p[idx]);
+        strcat(hashTmp,cTmp);
+    }
+
+}
+
+/*
+static void BMK_display_LittleEndian(const void* ptr, size_t length)
+{
     const BYTE* p = (const BYTE*)ptr;
     size_t idx;
     for (idx=length-1; idx<length; idx--)
         DISPLAYRESULT("%02x", p[idx]);
-}*/
+}
+
+
+
+*/

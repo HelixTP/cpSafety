@@ -8,6 +8,28 @@
 
 /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
 
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/include/dirent.h
+windows.h
+-
+stdio.h
+-
+stdarg.h
+-
+wchar.h
+-
+string.h
+-
+stdlib.h
+-
+malloc.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+errno.h
+-
+
 /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.c
 main.h
 /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.h
@@ -15,6 +37,8 @@ fcntl.h
 -
 io.h
 -
+include/dirent.h
+/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/include/dirent.h
 unistd.h
 -
 

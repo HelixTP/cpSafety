@@ -3,6 +3,7 @@
 
 CMakeFiles/cpSafety.dir/src/main.c.o
  /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
+ /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/include/dirent.h
  /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.c
  /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.h
  /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c

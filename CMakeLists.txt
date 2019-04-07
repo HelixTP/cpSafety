@@ -33,7 +33,7 @@ ADD_LIBRARY( fileHash STATIC
 add_executable(cpSafety
 		src/main.c
 
-        src/main.h )
+        src/main.h src/tools.c src/tools.h)
 
 #target_link_libraries(cpSafety ${CURSES_LIBRARIES} xxHash fileHash)
 target_link_libraries(cpSafety xxHash fileHash)

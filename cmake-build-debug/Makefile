@@ -203,6 +203,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/tools.o: src/tools.c.o
+
+.PHONY : src/tools.o
+
+# target to build an object file
+src/tools.c.o:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/tools.c.o
+.PHONY : src/tools.c.o
+
+src/tools.i: src/tools.c.i
+
+.PHONY : src/tools.i
+
+# target to preprocess a source file
+src/tools.c.i:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/tools.c.i
+.PHONY : src/tools.c.i
+
+src/tools.s: src/tools.c.s
+
+.PHONY : src/tools.s
+
+# target to generate assembly for a file
+src/tools.c.s:
+	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/src/tools.c.s
+.PHONY : src/tools.c.s
+
 src/xxhash.o: src/xxhash.c.o
 
 .PHONY : src/xxhash.o
@@ -247,6 +274,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tools.o"
+	@echo "... src/tools.i"
+	@echo "... src/tools.s"
 	@echo "... src/xxhash.o"
 	@echo "... src/xxhash.i"
 	@echo "... src/xxhash.s"

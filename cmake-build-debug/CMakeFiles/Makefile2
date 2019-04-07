@@ -72,7 +72,7 @@ CMakeFiles/cpSafety.dir/all: CMakeFiles/fileHash.dir/all
 CMakeFiles/cpSafety.dir/all: CMakeFiles/xxHash.dir/all
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/depend
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target cpSafety"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target cpSafety"
 .PHONY : CMakeFiles/cpSafety.dir/all
 
 # Include target in all.
@@ -82,7 +82,7 @@ all: CMakeFiles/cpSafety.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpSafety.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cpSafety.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/cpSafety.dir/rule
@@ -109,7 +109,7 @@ clean: CMakeFiles/cpSafety.dir/clean
 CMakeFiles/fileHash.dir/all:
 	$(MAKE) -f CMakeFiles/fileHash.dir/build.make CMakeFiles/fileHash.dir/depend
 	$(MAKE) -f CMakeFiles/fileHash.dir/build.make CMakeFiles/fileHash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target fileHash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target fileHash"
 .PHONY : CMakeFiles/fileHash.dir/all
 
 # Include target in all.
@@ -146,7 +146,7 @@ clean: CMakeFiles/fileHash.dir/clean
 CMakeFiles/xxHash.dir/all:
 	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/depend
 	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target xxHash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target xxHash"
 .PHONY : CMakeFiles/xxHash.dir/all
 
 # Include target in all.

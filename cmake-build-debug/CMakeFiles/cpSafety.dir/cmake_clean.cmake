@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cpSafety.dir/src/main.c.o"
+  "CMakeFiles/cpSafety.dir/src/tools.c.o"
   "cpSafety.pdb"
   "cpSafety"
 )

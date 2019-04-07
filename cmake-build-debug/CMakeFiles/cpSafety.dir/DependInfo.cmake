@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Volumes/data/workspaces/cpSafety/src/main.c" "/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles/cpSafety.dir/src/main.c.o"
+  "/Volumes/data/workspaces/cpSafety/src/tools.c" "/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles/cpSafety.dir/src/tools.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

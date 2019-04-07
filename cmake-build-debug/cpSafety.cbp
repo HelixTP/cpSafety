@@ -176,6 +176,12 @@
 		<Unit filename="/Volumes/data/workspaces/cpSafety/src/main.h">
 			<Option target="cpSafety"/>
 		</Unit>
+		<Unit filename="/Volumes/data/workspaces/cpSafety/src/tools.c">
+			<Option target="cpSafety"/>
+		</Unit>
+		<Unit filename="/Volumes/data/workspaces/cpSafety/src/tools.h">
+			<Option target="cpSafety"/>
+		</Unit>
 		<Unit filename="/Volumes/data/workspaces/cpSafety/src/xxhash.c">
 			<Option target="xxHash"/>
 		</Unit>

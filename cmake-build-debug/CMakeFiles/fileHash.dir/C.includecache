@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.c
+/Volumes/data/workspaces/cpSafety/src/fileHash.c
 stdio.h
 -
 stdlib.h
@@ -14,7 +14,7 @@ stdlib.h
 string.h
 -
 fileHash.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
+/Volumes/data/workspaces/cpSafety/src/fileHash.h
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
+/Volumes/data/workspaces/cpSafety/src/fileHash.h
 

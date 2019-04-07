@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
+/Volumes/data/workspaces/cpSafety/src/fileHash.h
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/include/dirent.h
+/Volumes/data/workspaces/cpSafety/src/include/dirent.h
 windows.h
 -
 stdio.h
@@ -30,19 +30,19 @@ sys/stat.h
 errno.h
 -
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.c
+/Volumes/data/workspaces/cpSafety/src/main.c
 main.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.h
+/Volumes/data/workspaces/cpSafety/src/main.h
 fcntl.h
 -
 io.h
 -
 include/dirent.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/include/dirent.h
+/Volumes/data/workspaces/cpSafety/src/include/dirent.h
 unistd.h
 -
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/main.h
+/Volumes/data/workspaces/cpSafety/src/main.h
 stdio.h
 -
 string.h
@@ -52,25 +52,25 @@ dirent.h
 stdlib.h
 -
 fileHash.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.h
+/Volumes/data/workspaces/cpSafety/src/fileHash.h
 xxhash.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.h
+/Volumes/data/workspaces/cpSafety/src/xxhash.h
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c
+/Volumes/data/workspaces/cpSafety/src/xxhash.c
 stdlib.h
 -
 string.h
 -
 xxhash.h
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.h
+/Volumes/data/workspaces/cpSafety/src/xxhash.h
 stdint.h
 -
 stdint.h
 -
 
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.h
+/Volumes/data/workspaces/cpSafety/src/xxhash.h
 stddef.h
 -
 xxhash.c
-/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c
+/Volumes/data/workspaces/cpSafety/src/xxhash.c
 

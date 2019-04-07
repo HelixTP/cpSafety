@@ -9,6 +9,15 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	include_directories(src src/include)
 endif()
 
+## test Endian
+
+include (TestBigEndian)
+TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
+if(IS_BIG_ENDIAN)
+	message(STATUS "BIG_ENDIAN")
+else()
+	message(STATUS "LITTLE_ENDIAN")
+endif()
 
 #include_directories(${CURSES_INCLUDE_DIR})
 

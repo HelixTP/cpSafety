@@ -50,29 +50,29 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/JetBrains/apps/CLion/ch-1/191.6183.49/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = "/Users/denislallemand/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-1/191.6183.6/CLion 2019.1 EAP.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = /opt/JetBrains/apps/CLion/ch-1/191.6183.49/bin/cmake/linux/bin/cmake -E remove -f
+RM = "/Users/denislallemand/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-1/191.6183.6/CLion 2019.1 EAP.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /run/media/lad/FDE2-A6DB/Workspaces/cpSafety
+CMAKE_SOURCE_DIR = /Volumes/data/workspaces/cpSafety
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug
+CMAKE_BINARY_DIR = /Volumes/data/workspaces/cpSafety/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/cpSafety.dir
 
 # All Build rule for target.
-CMakeFiles/cpSafety.dir/all: CMakeFiles/xxHash.dir/all
 CMakeFiles/cpSafety.dir/all: CMakeFiles/fileHash.dir/all
+CMakeFiles/cpSafety.dir/all: CMakeFiles/xxHash.dir/all
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/depend
 	$(MAKE) -f CMakeFiles/cpSafety.dir/build.make CMakeFiles/cpSafety.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target cpSafety"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target cpSafety"
 .PHONY : CMakeFiles/cpSafety.dir/all
 
 # Include target in all.
@@ -82,9 +82,9 @@ all: CMakeFiles/cpSafety.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpSafety.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cpSafety.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/cpSafety.dir/rule
 
 # Convenience name for target.
@@ -103,50 +103,13 @@ clean: CMakeFiles/cpSafety.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/xxHash.dir
-
-# All Build rule for target.
-CMakeFiles/xxHash.dir/all:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/depend
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target xxHash"
-.PHONY : CMakeFiles/xxHash.dir/all
-
-# Include target in all.
-all: CMakeFiles/xxHash.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/xxHash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/xxHash.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/xxHash.dir/rule
-
-# Convenience name for target.
-xxHash: CMakeFiles/xxHash.dir/rule
-
-.PHONY : xxHash
-
-# clean rule for target.
-CMakeFiles/xxHash.dir/clean:
-	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/clean
-.PHONY : CMakeFiles/xxHash.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/xxHash.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/fileHash.dir
 
 # All Build rule for target.
 CMakeFiles/fileHash.dir/all:
 	$(MAKE) -f CMakeFiles/fileHash.dir/build.make CMakeFiles/fileHash.dir/depend
 	$(MAKE) -f CMakeFiles/fileHash.dir/build.make CMakeFiles/fileHash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target fileHash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target fileHash"
 .PHONY : CMakeFiles/fileHash.dir/all
 
 # Include target in all.
@@ -156,9 +119,9 @@ all: CMakeFiles/fileHash.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fileHash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fileHash.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/fileHash.dir/rule
 
 # Convenience name for target.
@@ -173,6 +136,43 @@ CMakeFiles/fileHash.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/fileHash.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/xxHash.dir
+
+# All Build rule for target.
+CMakeFiles/xxHash.dir/all:
+	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/depend
+	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target xxHash"
+.PHONY : CMakeFiles/xxHash.dir/all
+
+# Include target in all.
+all: CMakeFiles/xxHash.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/xxHash.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/xxHash.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/xxHash.dir/rule
+
+# Convenience name for target.
+xxHash: CMakeFiles/xxHash.dir/rule
+
+.PHONY : xxHash
+
+# clean rule for target.
+CMakeFiles/xxHash.dir/clean:
+	$(MAKE) -f CMakeFiles/xxHash.dir/build.make CMakeFiles/xxHash.dir/clean
+.PHONY : CMakeFiles/xxHash.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/xxHash.dir/clean
 
 .PHONY : clean
 

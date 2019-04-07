@@ -259,10 +259,14 @@ static void BMK_display_LittleEndian(const void* ptr, size_t length,char *cHash)
     for (idx=length-1; idx<length; idx--)
     {
         //DISPLAYRESULT("%02x", p[idx]);*/
-        sprintf(cTmp, "%02x", p[idx]);
-        strcat(hashTmp,cTmp);
-    }
 
+        sprintf(cTmp, "%02x", p[idx]);
+        strcpy(hashSplit[idx],cTmp);
+    }
+    for (int i = 0; i < length; ++i) {
+        strcat(hashTmp,hashSplit[i]);
+    }
+    strcpy(cHash,hashTmp);
 }
 
 /*

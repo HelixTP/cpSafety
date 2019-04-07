@@ -1,2 +1,2 @@
-/usr/bin/ar qc libxxHash.a  CMakeFiles/xxHash.dir/src/xxhash.c.o
-/usr/bin/ranlib libxxHash.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libxxHash.a  CMakeFiles/xxHash.dir/src/xxhash.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libxxHash.a

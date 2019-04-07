@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/JetBrains/apps/CLion/ch-1/191.6183.49/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = "/Users/denislallemand/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-1/191.6183.6/CLion 2019.1 EAP.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = /opt/JetBrains/apps/CLion/ch-1/191.6183.49/bin/cmake/linux/bin/cmake -E remove -f
+RM = "/Users/denislallemand/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-1/191.6183.6/CLion 2019.1 EAP.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /run/media/lad/FDE2-A6DB/Workspaces/cpSafety
+CMAKE_SOURCE_DIR = /Volumes/data/workspaces/cpSafety
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug
+CMAKE_BINARY_DIR = /Volumes/data/workspaces/cpSafety/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/fileHash.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/fileHash.dir/flags.make
 
 CMakeFiles/fileHash.dir/src/fileHash.c.o: CMakeFiles/fileHash.dir/flags.make
 CMakeFiles/fileHash.dir/src/fileHash.c.o: ../src/fileHash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/fileHash.dir/src/fileHash.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fileHash.dir/src/fileHash.c.o   -c /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/fileHash.dir/src/fileHash.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fileHash.dir/src/fileHash.c.o   -c /Volumes/data/workspaces/cpSafety/src/fileHash.c
 
 CMakeFiles/fileHash.dir/src/fileHash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fileHash.dir/src/fileHash.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.c > CMakeFiles/fileHash.dir/src/fileHash.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Volumes/data/workspaces/cpSafety/src/fileHash.c > CMakeFiles/fileHash.dir/src/fileHash.c.i
 
 CMakeFiles/fileHash.dir/src/fileHash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fileHash.dir/src/fileHash.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/fileHash.c -o CMakeFiles/fileHash.dir/src/fileHash.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Volumes/data/workspaces/cpSafety/src/fileHash.c -o CMakeFiles/fileHash.dir/src/fileHash.c.s
 
 # Object files for target fileHash
 fileHash_OBJECTS = \
@@ -80,7 +80,7 @@ fileHash_EXTERNAL_OBJECTS =
 libfileHash.a: CMakeFiles/fileHash.dir/src/fileHash.c.o
 libfileHash.a: CMakeFiles/fileHash.dir/build.make
 libfileHash.a: CMakeFiles/fileHash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libfileHash.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libfileHash.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/fileHash.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fileHash.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/fileHash.dir/clean:
 .PHONY : CMakeFiles/fileHash.dir/clean
 
 CMakeFiles/fileHash.dir/depend:
-	cd /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /run/media/lad/FDE2-A6DB/Workspaces/cpSafety /run/media/lad/FDE2-A6DB/Workspaces/cpSafety /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug /run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/fileHash.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Volumes/data/workspaces/cpSafety/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Volumes/data/workspaces/cpSafety /Volumes/data/workspaces/cpSafety /Volumes/data/workspaces/cpSafety/cmake-build-debug /Volumes/data/workspaces/cpSafety/cmake-build-debug /Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles/fileHash.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fileHash.dir/depend
 

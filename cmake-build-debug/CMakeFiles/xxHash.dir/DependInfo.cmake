@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/src/xxhash.c" "/run/media/lad/FDE2-A6DB/Workspaces/cpSafety/cmake-build-debug/CMakeFiles/xxHash.dir/src/xxhash.c.o"
+  "/Volumes/data/workspaces/cpSafety/src/xxhash.c" "/Volumes/data/workspaces/cpSafety/cmake-build-debug/CMakeFiles/xxHash.dir/src/xxhash.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

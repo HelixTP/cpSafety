@@ -1,5 +1,0 @@
-"/Users/denislallemand/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-1/191.6183.6/CLion 2019.1 EAP.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Volumes/data/workspaces/cpSafety
--- LITTLE_ENDIAN
--- Configuring done
--- Generating done
--- Build files have been written to: /Volumes/data/workspaces/cpSafety/cmake-build-debug
